@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "A template for kick starting a Cloudflare Workers project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "root",
+  "license": "MIT",
+  "devDependencies": {
+    "@dollarshaveclub/cloudworker": "^0.1.2",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "prettier": "^2.5.1"
+  }
+}

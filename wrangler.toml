@@ -1,0 +1,8 @@
+name = "notion2ical"
+type = "javascript"
+
+account_id = "6fd884d37832daf6f87e549cf1cb0d82"
+workers_dev = true
+route = "notion2ical.plett.cf/*"
+zone_id = "4f19b83f79f88c11d9bf99a0e392d1e3"
+compatibility_date = "2022-01-08"
