@@ -1,5 +1,5 @@
 name = "notion2ical"
-type = "javascript"
+type = "webpack"
 
 account_id = "6fd884d37832daf6f87e549cf1cb0d82"
 workers_dev = true
