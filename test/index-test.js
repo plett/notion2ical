@@ -14,6 +14,7 @@ describe('worker unit test', function () {
     worker = new Cloudworker(workerScript);
   });
 
+/*
   it('tests requests and responses', async () => {
     const request = new Cloudworker.Request('https://mysite.com/api')
     // Pass the request through Cloudworker to simulate script exectuion
@@ -22,4 +23,5 @@ describe('worker unit test', function () {
     expect(response.status).to.eql(200);
     expect(body).to.eql('Hello worker!');
   });
+*/
 });
