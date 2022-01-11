@@ -8,12 +8,21 @@ addEventListener('fetch', event => {
  * @param {Request} request
  */
 async function handleRequest(request) {
+  const myfilter = {
+    filter: {
+      property: 'Date',
+      number: {
+        is_not_empty: true
+      }
+    }
+  }
   const resp = await fetch('https://api.notion.com/v1/databases/195f7bad7de34dd8a9ced504ea101e84/query', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${NOTION_TOKEN}`,
       'Notion-Version': "2021-08-16"
-    }
+    },
+    body: JSON.stringify(myfilter)
   })
 
   const data = await resp.json()
