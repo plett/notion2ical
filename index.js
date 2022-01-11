@@ -60,8 +60,11 @@ async function handleRequest(request) {
     // TODO time_zone?
 
     if (n.url) {
-      // ical.js doesn't know about "new" RFC7986 url, so, set it manually
-      vevent.addPropertyWithValue('url', n.url);
+      // for lack of anything else to go in the "body" description, put the url
+      e.description = n.url
+      // ical.js doesn't know about "new" RFC7986 uri, so, set it manually. does
+      // anything read this?
+      vevent.addPropertyWithValue('uri', n.url);
     }
 
     e.summary = n.properties.Name.title[0].plain_text
@@ -70,6 +73,9 @@ async function handleRequest(request) {
   }
 
   cal.addPropertyWithValue('version', '2.0')
+  cal.addPropertyWithValue('method', 'PUBLISH')
+  cal.addPropertyWithValue('x-wr-calname', "Paul's Notion test")
+  cal.addPropertyWithValue('x-wr-caldesc', "Paul's Notion test")
   cal.addPropertyWithValue('prodid', 'https://github.com/plett/notion2ical')
 
   return new Response(cal.toString(), {
