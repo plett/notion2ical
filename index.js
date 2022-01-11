@@ -50,6 +50,9 @@ async function handleRequest(request) {
 
     if (d && d.start) {
       e.startDate = ICAL.Time.fromString(d.start)
+    } else {
+      //start date is a required field, skip if it's not there
+      continue
     }
     if (d && d.end) {
       e.endDate = ICAL.Time.fromString(d.end)
@@ -66,7 +69,10 @@ async function handleRequest(request) {
     cal.addSubcomponent(vevent);
   }
 
+  cal.addPropertyWithValue('version', '2.0')
+  cal.addPropertyWithValue('prodid', 'https://github.com/plett/notion2ical')
+
   return new Response(cal.toString(), {
-    headers: { 'content-type': 'text/plain' },
+    headers: { 'content-type': 'text/calendar' },
   })
 }
