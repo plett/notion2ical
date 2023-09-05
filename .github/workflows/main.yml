@@ -10,7 +10,7 @@ jobs:
 #  test:
 #    runs-on: ubuntu-latest
 #    steps:
-#      - uses: actions/checkout@v3
+#      - uses: actions/checkout@v4
 #      - uses: actions/setup-node@v2
 #      - run: yarn install
 #      - run: yarn test
@@ -21,7 +21,7 @@ jobs:
     environment: production
     name: Deploy
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Publish
         uses: cloudflare/wrangler-action@1.3.0
         with:
